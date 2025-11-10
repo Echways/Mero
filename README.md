@@ -1,5 +1,5 @@
 
-# TimeTicket — веб-приложение для событий и билетов
+# Mero — веб-приложение для событий и билетов
 
 [![Django](https://img.shields.io/badge/Django-%23092E20.svg?logo=django&logoColor=white)](https://www.djangoproject.com/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://www.python.org/)
@@ -9,8 +9,8 @@
 
 ---
 
-> **TimeTicket web:**
-> TimeTicket — аккуратное и практичное Django-приложение для управления событиями, билетами и медиа-контентом. Проект подходит как стартовая база для MVP: готовая админка, поддержка загрузки изображений и простая локальная конфигурация.
+> **Mero:**
+> Mero — аккуратное и практичное Django-приложение для управления событиями, билетами и медиа-контентом. Проект подходит как стартовая база для MVP: готовая админка, поддержка загрузки изображений и простая локальная конфигурация.
 
 ---
 
@@ -48,8 +48,8 @@
 ## Быстрая установка
 
 ```bash
-git clone git@github.com:Echways/TimeTicket-web.git
-cd TimeTicket-web
+git clone git@github.com:Echways/Mero.git
+cd Mero
 
 python3 -m venv .venv
 source .venv/bin/activate
