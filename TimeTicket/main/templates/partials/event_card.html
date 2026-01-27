@@ -1,0 +1,12 @@
+<div class="event">
+    <div class="event-window-container" id="{{ counter }}">
+        <div class="event-window-inner">
+            {% if event.promo_image %}
+                <img class="event-image" src="{{ event.promo_image.url }}" alt="{{ event.title }}">
+            {% endif %}
+            <h1 class="event-title">{{ event.title }}</h1>
+            <div class="event-description">{{ event.short_description }}</div>
+            <a class="event-more" href="{% url 'event_detail' event.pk %}">Подробнее</a>
+        </div>
+    </div>
+</div>

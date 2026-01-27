@@ -1,0 +1,141 @@
+.my-events-button {
+    width: 200px;
+    display: block;
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    height: 30px;
+    border-radius: var(--radius-md);
+    line-height: 30px;
+    font-family: var(--font-main);
+    font-size: 15px;
+    user-select: none;
+    margin: auto;
+}
+
+.my-events-button:hover {
+    background-color: var(--color-primary-hover);
+    transition-duration: 0.3s;
+}
+
+.my-events-button:active {
+    background-color: var(--color-primary);
+    transition: linear 1s;
+}
+
+.save-button {
+    display: inline-block;
+    width: 200px;
+    font-family: var(--font-main);
+    font-size: 15px;
+    padding: 5px 5px;
+    background: var(--color-surface-muted);
+    border: 0 none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    margin-right: 15px;
+}
+
+.change-password-button {
+    display: inline-block;
+    position: sticky;
+    width: 140px;
+    height: 30px;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    cursor: pointer;
+    margin-left: -4px;
+    border: 0 none;
+    font-family: var(--font-main);
+    font-size: 15px;
+    background: var(--color-surface-muted);
+}
+
+.sign-out-button {
+    display: inline-block;
+    position: sticky;
+    width: 60px;
+    margin-left: 30px;
+    height: 30px;
+    padding: 5px 5px;
+    background: var(--color-surface-muted);
+    border: 0 none;
+    cursor: pointer;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+    font-family: var(--font-main);
+    font-size: 15px;
+}
+
+.login-button {
+    position: relative;
+    display: block;
+    background-color: var(--color-primary);
+    width: 150px;
+    color: var(--color-text-inverse);
+    border-radius: var(--radius-md);
+    height: 30px;
+    margin: auto;
+    margin-top: 10px;
+    line-height: 30px;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 10px;
+}
+
+.login-button:hover {
+    background-color: var(--color-primary-hover);
+    transition-duration: 0.3s;
+}
+
+.login-button:active {
+    background-color: var(--color-primary);
+    transition: linear 1s;
+}
+
+.purchase-button {
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    color: var(--color-text-inverse);
+    border-radius: var(--radius-md);
+    margin-top: 10px;
+    text-align: center;
+    background-color: var(--color-primary);
+    user-select: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.purchase-button:hover {
+    background-color: var(--color-primary-hover);
+    transition-duration: 0.3s;
+}
+
+.purchase-button:active {
+    background-color: var(--color-primary);
+    transition: linear 1s;
+}
+
+.messages {
+    width: 70%;
+    margin: 20px auto 0;
+}
+
+.message {
+    background: var(--color-surface-muted);
+    border-radius: var(--radius-md);
+    padding: 8px 12px;
+    margin-bottom: 8px;
+}
+
+.form-errors {
+    width: 70%;
+    margin: 10px auto 0;
+}
+
+.form-error {
+    color: var(--color-danger);
+    margin-bottom: 4px;
+}

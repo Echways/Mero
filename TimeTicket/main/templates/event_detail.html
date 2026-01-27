@@ -5,31 +5,35 @@
             <div class="main-event-inner">
                 <div class="main-event-window">
                     <div class="main-event-info-container">
-                        <img src="{{ event.eventpic.url }}" class="main-event-img">
+                        {% if event.promo_image %}
+                            <img src="{{ event.promo_image.url }}" class="main-event-img" alt="{{ event.title }}">
+                        {% endif %}
                         <div class="main-event-host-title">Организатор</div>
                         <div class="main-event-host-description-container">
-                            <img class="main-event-host-avatar" src="{{ event.hostpic.url }}">
+                            {% if event.host_avatar %}
+                                <img class="main-event-host-avatar" src="{{ event.host_avatar.url }}" alt="{{ event.host_name }}">
+                            {% endif %}
                             <div class="main-event-host-description">{{ hostname }}</div>
                         </div>
                         <input type="text" placeholder="Введите промокод" class="promocode">
-                        <a class="purchase-button" href="{% url 'reg_event' %}" style="text-decoration:none">Купить билет</a>
+                        <a class="purchase-button" href="{% url 'event_registration' %}">Купить билет</a>
                     </div>
                 </div>
                 <div class="main-event-description">
                     <div class="description-container">
-                        <div class="description-title">{{ event.eventslogan }}</div>
-                        <div class="description">{{ event.eventdescription }}
+                        <div class="description-title">{{ event.slogan }}</div>
+                        <div class="description">{{ event.description }}
                         </div>
                         <div class="ticket-prices">
-                            <div class="ticket-price">Стандартный билет: {{ event.ticketprice_base }} рублей</div>
-                            <div class="ticket-price">Билет c кофе: {{ event.ticketprice_coffee }} рублей</div>
-                            <div class="ticket-price">Билет с обедом: {{ event.ticketprice_dinner }} рублей</div>
-                            <div class="ticket-price">VIP билет: {{ event.ticketprice_vip }} рублей</div>
+                            <div class="ticket-price">Стандартный билет: {{ event.base_price }} рублей</div>
+                            <div class="ticket-price">Билет c кофе: {{ ticket_coffee }} рублей</div>
+                            <div class="ticket-price">Билет с обедом: {{ ticket_dinner }} рублей</div>
+                            <div class="ticket-price">VIP билет: {{ event.vip_price }} рублей</div>
                         </div>
                         <div class="event-info">
                             <div class="event-time-left">До начала мероприятия осталось: {{ start_event }}</div>
-                            <div class="event-date">Дата проведения: {{ event.eventstartday }}</div>
-                            <div class="event-place">Место проведения: {{ event.eventplace }}</div>
+                            <div class="event-date">Дата проведения: {{ event.starts_at|date:"d.m.Y H:i" }}</div>
+                            <div class="event-place">Место проведения: {{ event.venue }}</div>
                         </div>
                     </div>
                 </div>

@@ -1,77 +1,66 @@
+# Mero — платформа для событий и билетов
 
-# Mero — веб-приложение для событий и билетов
+Современное Django‑приложение для управления событиями, регистрациями и медиа‑контентом. Проект обновлён до актуального стека, использует PostgreSQL и подготовлен для разработки и продакшн‑деплоя.
 
-[![Django](https://img.shields.io/badge/Django-%23092E20.svg?logo=django&logoColor=white)](https://www.djangoproject.com/)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://www.python.org/)
-[![SQLite](https://img.shields.io/badge/DB-SQLite-lightgrey)]()
-[![Pillow](https://img.shields.io/badge/images-Pillow-yellowgreen)]()
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-
----
-
-> Этот проект — аккуратное и практичное Django-приложение для управления событиями, билетами и медиа-контентом. Проект подходит как стартовая база для MVP: готовая админка, поддержка загрузки изображений и простая локальная конфигурация.
-
----
-
-## Подробное описание возможностей
-
-### 1. Управление событиями (Events)
-- Модели событий с основными полями (название, описание, даты начала/окончания, место).  
-- Админ-интерфейс для создания/редактирования/удаления событий.  
-- Загрузка обложек и вспомогательных изображений для каждого события (через `ImageField`). 
-
-### 2. Билеты и инвентарь (Tickets)
-- Модель билета, привязанная к событию (тип билета, цена, количество).  
-- Управление наличием билетов в админке.  
-- Базовая логика резервирования/продажи
-
-### 3. Пользователи и админ-панель
-- Полноценная интеграция с Django Admin — удобное управление сущностями.  
-- Возможность создавать суперпользователя и управлять доступом прямо через админку.  
-- Формы (Django Forms / ModelForms) для валидации и обработки входящих данных.
-
-### 4. Медиа и файлы
-- Поддержка `MEDIA_ROOT` и `MEDIA_URL` — файлы сохраняются в `media/`.  
-- Обработка и хранение изображений через Pillow.  
-
-### 5. Формы и валидация
-- В проекте присутствуют формы для создания/редактирования сущностей (включая `ModelForm`).  
-- Серверная валидация полей и обработка ошибок в шаблонах.
-
-### 6. Простая локальная конфигурация
-- По-умолчанию используется SQLite — удобно для разработки и тестирования.  
-- Настройка через `settings.py`; при необходимости легко переключиться на PostgreSQL.
-
----
-
-## Быстрая установка
+## Быстрый старт (Docker)
 
 ```bash
-git clone git@github.com:Echways/Mero.git
-cd Mero
+docker compose down -v
+docker compose up --build
+```
 
+Открой: `http://localhost:8000`
+
+## Production (docker-compose.prod.yml)
+
+```bash
+docker compose -f docker-compose.prod.yml up --build
+```
+
+Открой: `http://localhost`
+
+## Локальный запуск без Docker
+
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
 
 pip install -r requirements.txt
 
-export SECRET_KEY="replace_this"
-export DEBUG=True
+cp .env.example .env
+export ENV_FILE=.env
 
 cd TimeTicket
-
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver 0.0.0.0:8000
 ```
 
----
+## Разработка
 
-## Команды разработки
 ```bash
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py collectstatic --noinput
-python manage.py shell
+pip install -r requirements-dev.txt
+
+black .
+ruff check .
+pytest
 ```
+
+## Основные переменные окружения
+
+- `SECRET_KEY` — секрет Django
+- `DEBUG` — режим отладки
+- `ALLOWED_HOSTS` — список хостов
+- `DATABASE_URL` — строка подключения к PostgreSQL
+- `EMAIL_*` — SMTP конфигурация
+- `CREATE_SUPERUSER` — автосоздание админа в Docker
+- `SUPERUSER_*` — данные суперпользователя
+
+## Архитектура
+
+- `TimeTicket/TimeTicket/settings/` — настройки (base/dev/prod)
+- `TimeTicket/main/` — приложение событий
+- `TimeTicket/main/services/` — внешние побочные эффекты (email, экспорт)
+- `TimeTicket/main/templates/` — шаблоны и partials
+- `TimeTicket/static/css/` — CSS разделён на base/components/pages
+- `deploy/` — nginx конфигурация

@@ -6,6 +6,7 @@
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
+    {% include "partials/messages.html" %}
     <div class="login">
         <div class="container">
             <div class="login-window">
@@ -24,11 +25,7 @@
                             <input type="submit" value="Войти" class="login-button">
                         <div class="sign-in-offer">Нет аккаунта? <a href="{% url 'signup' %}" class="sign-up-link">Зарегистрируйтесь!</a></div>
                     </div>
-                    {% if form.errors %}
-                    <div class="wrong-password">
-                    <strong class="wrong-password">Неверные данные</strong>
-                    </div>
-                    {% endif %}
+                    {% include "partials/form_errors.html" %}
                     </div>
                 </div>
             </div>
