@@ -1,5 +1,6 @@
 import os
 import sys
+import django
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -10,7 +11,5 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "TimeTicket.settings")
 os.environ.setdefault("SECRET_KEY", "test-secret")
 os.environ.setdefault("DEBUG", "True")
 os.environ.setdefault("DATABASE_URL", "sqlite:///db.sqlite3")
-
-import django
 
 django.setup()
