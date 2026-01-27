@@ -18,7 +18,9 @@ known-first-party = ["main", "TimeTicket"]
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "TimeTicket.settings"
+django_find_project = false
 python_files = ["test_*.py", "*_test.py"]
+pythonpath = ["TimeTicket"]
 
 [tool.mypy]
 python_version = "3.12"
