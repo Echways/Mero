@@ -1,0 +1,158 @@
+:root {
+    --color-primary: #686de0;
+    --color-primary-hover: #3238d5;
+    --color-surface: #ffffff;
+    --color-surface-muted: #ececec;
+    --color-text-inverse: #ffffff;
+    --color-danger: #e74c3c;
+    --color-shadow: #7f8c8d;
+    --color-border: #bdbdbd;
+    --font-main: 'Roboto', sans-serif;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 12px;
+    --space-lg: 20px;
+}
+
+body {
+    background: var(--color-surface);
+}
+
+.header {
+    height: 60px;
+    background-color: var(--color-primary);
+    position: fixed;
+    display: inline-block;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    justify-content: space-between;
+    font-family: var(--font-main);
+    user-select: none;
+    z-index: 1000;
+}
+
+.logo-title {
+    font-weight: 700;
+    color: white;
+    font-size: 30px;
+}
+
+.header-inner {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.container {
+    margin-top: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    margin-right: 25px;
+}
+
+.nav-link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-surface);
+    position: relative;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .2s linear;
+    border-radius: 10px;
+}
+
+.nav-link:hover:after {
+    opacity: 1;
+}
+
+nav {
+    display: flex;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    font-weight: 700;
+    align-items: center;
+}
+
+.nav-logout-form {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+.inline-form {
+    display: inline;
+    margin: 0;
+}
+
+.input-question {
+    text-align: left;
+    margin-left: 30px;
+}
+
+.form-control {
+    width: 82%;
+    margin-left: 150px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 7px;
+    background-color: var(--color-surface-muted);
+    outline: none;
+    border: none;
+}
+
+.form-control:hover {
+    box-shadow: 0 2px 5px 0 var(--color-shadow);
+    transition-duration: .5s;
+}
+
+.form-control:focus {
+    box-shadow: 0 2px 5px 0 var(--color-shadow);
+    transition-duration: .5s;
+}
+
+.input-container {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.input-question {
+    font-size: 20px;
+    position: absolute;
+}

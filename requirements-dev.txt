@@ -1,0 +1,8 @@
+-r requirements.txt
+
+black>=24.0
+ruff>=0.4
+mypy>=1.10
+pytest>=8.0
+pytest-django>=4.8
+django-stubs>=5.0

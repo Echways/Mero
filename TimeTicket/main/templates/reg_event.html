@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="post" action="{% url 'login' %}">
+{% include "partials/messages.html" %}
+<form method="post" action="{% url 'event_registration' %}">
 {% csrf_token %}
+{% include "partials/form_errors.html" %}
 <div class="container">
             <div class="account-inner">
                 <div class="account-window">
                     <h1 class="account-title">Оплата билета</h1>
                     <div class="input-container">
                         <div class="input-question">Фамилия</div>
-<!--                        <input class="input-settings" type="text">-->
-                        {{ form.surname }}
+                        {{ form.last_name }}
                     </div>
                     <div class="input-container">
                         <div class="input-question">Имя</div>
-                        {{ form.name }}
+                        {{ form.first_name }}
                     </div>
                      <div class="input-container">
                         <div class="input-question">Email</div>
@@ -22,19 +23,15 @@
                     </div>
                     <div class="input-container">
                         <div class="input-question">Событие</div>
-<!--                        <select class="select-purchase">-->
-<!--                            <option>ICPC</option>-->
-<!--                            <option>Технострелка</option>-->
-<!--                        </select>-->
-                        {{ form.event_id }}
+                        {{ form.event }}
                     </div>
                     <div class="input-container">
                         <div class="input-question">Тип билета</div>
-                        {{ form.ticket_id }}
+                        {{ form.ticket_type }}
                     </div>
                     <div class="pay-button-container">
                     <div class="pay-button">
-                        <a href="#" class="my-events-button">Оплатить</a>
+                        <button type="submit" class="my-events-button">Оплатить</button>
                     </div>
                     </div>
 

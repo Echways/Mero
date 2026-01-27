@@ -2,31 +2,14 @@
 
 {% block content %}
 <div class="container">
-            <div class="main-event-inner">
-                <div class="my-event-window">
-                    <div class="my-event-info-container">
-                        <img src="img/events/2.png" class="my-event-img">
-                        <div class="main-event-host-title">Организатор</div>
-                        <div class="main-event-host-description-container">
-                            <img class="main-event-host-avatar" src="{{ event.hostpic.url }}">
-                            <div class="main-event-host-description">{{ event.hostname }}</div>
-                        </div>
-
-                        <a class="purchase-button" style="text-decoration:none" href="videos/">Вложения</a>
-                    </div>
-                </div>
-                <div class="my-event-description">
-                    <div class="description-container">
-                        <div class="my-event-description-title">{{ event.eventdescriptionshort }}</div>
-                        <div class="my-description">{{ event.eventdescription }}
-                        </div>
-                        <div class="event-info">
-                            <div class="event-time-left">До начала мероприятия осталось: {{ start_event }} дней</div>
-                            <div class="event-date">Дата проведения: {{ event.eventstartday }}</div>
-                            <div class="event-place">Место проведения: {{ event.eventplace }}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="eventcontainer">
+        <div class="eventinner">
+            {% for event in events %}
+                {% include "partials/event_card.html" with event=event counter=forloop.counter %}
+            {% empty %}
+            <div>Событий пока нет.</div>
+            {% endfor %}
         </div>
+    </div>
+</div>
 {% endblock content%}

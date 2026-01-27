@@ -26,13 +26,16 @@
             </div>
             <div class="input-container">  
                 <div class="input-question">Телефон</div>
-                <input type="tel" maxlength="12"  class="form-control" type="text" value="{{ user.mobilephone }}">
+                <input type="tel" maxlength="16" class="form-control" type="text" value="{{ user.mobile_phone }}">
             </div>
             <div class="account-buttons">
                 <div class="left buttons">
 
-                    <input type="button" value="Выйти" class="sign-out-button" onClick="window.location='../logout/'">
-                    <input type="button" value="Изменить пароль" class="change-password-button" onClick="window.location='../passwordchange/'">
+                    <form method="post" action="{% url 'logout' %}" class="inline-form">
+                        {% csrf_token %}
+                        <button type="submit" class="sign-out-button">Выйти</button>
+                    </form>
+                    <input type="button" value="Изменить пароль" class="change-password-button" onClick="window.location='{% url 'passwordchange' %}'">
                 </div>
                                     <div class="my-events">
                 <a href="{% url 'profileevents' %}" class="my-events-button">Мои мероприятия</a>

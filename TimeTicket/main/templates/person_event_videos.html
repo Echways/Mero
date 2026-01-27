@@ -6,14 +6,16 @@
             </div>
             <div class="eventcontainer">
                 <div class="eventinner">
-                            {% for video in event.File.all %}
-                            <div class="attachment">
-                                <div class="event-window-container">
-                                    <div class="event-window-inner">
-                                        <video width="600px" class = "attachment-image" height="600px" controls preload="auto" src="{{ video.video.url }}" type="video/mp4"></video>
-                                    </div>
+                        {% for video in videos %}
+                        <div class="attachment">
+                            <div class="event-window-container">
+                                <div class="event-window-inner">
+                                    <video width="600px" class="attachment-image" height="600px" controls preload="auto" src="{{ video.video.url }}" type="video/mp4"></video>
                                 </div>
                             </div>
+                        </div>
+                        {% empty %}
+                        <div>Видео пока нет.</div>
                         {% endfor %}
                 </div>
         </div>

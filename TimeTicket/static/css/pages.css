@@ -1,0 +1,566 @@
+.account-inner {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.account-window {
+    width: 70%;
+    margin: auto;
+    background-color: white;
+    padding-bottom: 30px;
+    margin-top: 100px;
+    border-radius: 10px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    padding-top: 5px;
+    padding-right: 20px;
+}
+
+.account-title {
+    text-align: center;
+    margin-bottom: -5px;
+    margin-left: 10px;
+}
+
+.account-buttons {
+    position: relative;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    text-align: center;
+    border: 0 none;
+    font-family: var(--font-main);
+    font-size: 15px;
+}
+
+.left-buttons {
+    display: flex;
+    border-radius: 10px;
+    margin-left: 30px;
+    width: 150px;
+    height: 30px;
+}
+
+.myevents {
+    text-align: center;
+    display: inline-flex;
+}
+
+.sign-out-button:hover, .change-password-button:hover, .save-button:hover {
+    background-color: var(--color-border);
+    transition-duration: .3s
+}
+
+.sign-out-button:active, .change-password-button:active, .save-button:active {
+    background-color: var(--color-surface-muted);
+    transition: linear 1s;
+}
+
+.register-container {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    text-align: center;
+    position: relative;
+    margin-left: 0px;
+}
+
+.register-button {
+    width: 200px;
+    display: block;
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: white;
+    height: 30px;
+    border-radius: 10px;
+    vertical-align: center;
+    text-align: center;
+    line-height: 20px;
+           font-family: var(--font-main);
+    font-size: 15px;
+        user-select: none;
+    margin: auto;
+
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+}
+
+.register-button:hover {
+    background-color: var(--color-primary-hover);
+    transition-duration: .3s
+}
+
+.register-button:active {
+    background-color: var(--color-primary);
+    transition: linear 1s;
+}
+
+.politic-checkbox {
+    margin-left: 280px;
+    width: 20px;
+    margin-top: 6px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 7px;
+    background-color: var(--color-surface-muted);
+    outline: none;
+    border: none;
+}
+
+.terms {
+    color: black;
+}
+
+.politic-checkbox:checked {
+    background-color: red;
+}
+
+.reg-error {
+    margin: auto;
+    display: block;
+    position: relative;
+    width: 200px;
+    text-align: center;
+    margin-top:15px;
+    color: var(--color-danger);
+
+}
+
+.checkbox {
+    margin-left: 280px;
+    width: 20px;
+    margin-top: 6px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 7px;
+    background-color: var(--color-surface-muted);
+    outline: none;
+    border: none;
+}
+
+.eventcontainer {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    right: 0;
+    width: 100%;
+    font-family: var(--font-main);
+    font-size: 15px;
+}
+
+.eventinner {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.event {
+    background-color: white;
+    width: 350px;
+    border-radius: 10px;
+    height: 400px;
+    display: flex;
+    position: relative;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.event-image {
+    display: block;
+    position: relative;
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.event-title {
+    font-size: 20px;
+    text-align: center;
+}
+
+.event-description {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    max-width: 350px;
+    max-height: 55px;
+}
+
+.event-more {
+    display: block;
+    top: 350px;
+    position: absolute;
+    width: 200px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 75px;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    background-color: var(--color-primary);
+}
+
+.event-more:hover {
+    background-color: var(--color-primary-hover);
+    transition-duration: .3s
+}
+
+.event-more:active {
+    background-color: var(--color-primary);
+    transition: linear 1s;
+}
+
+.login {    width: 100%;
+    padding-top: 40px; margin:40px;}
+.login-window {
+    background-color: white;    width: 500px;
+    height: 400px;    margin: auto;
+    position: relative;    display: block;
+    border-radius: 10px;    padding-top: 20px;
+    font-family: var(--font-main);}
+.login-logo {
+    height: 150px;    width: 150px;
+    margin: auto;    user-select: none;
+}
+.login-title {
+    font-size: 20px;
+    font-weight: 700;    text-align: center;
+    margin-top: 10px;}
+
+.login-input {
+    width: 100%;
+    height: 34px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: var(--color-surface-muted);
+    outline: none;
+    border: none;
+    padding: 4px 10px;
+    box-sizing: border-box;
+}
+.login-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 70%;
+    margin: 12px auto;
+    gap: 6px;
+}
+.login-question {
+    font-size: 18px;
+    display: block;
+}
+
+.login-options {
+    width: 100%;    text-align: center;
+}
+.sign-up-offer {    position: relative;
+    display: block;}
+.sign-up-link {
+    color: black;}
+.wrong-password {    margin: auto;
+    display: block;    position: relative;
+    width: 100%;    text-align: center;
+    margin-top: 10px;    color: var(--color-danger);
+}
+.login-input:hover {    box-shadow: 0 2px 5px 0 var(--color-shadow);
+    transition-duration: .5s;}
+.login-input:focus {    box-shadow: 0 2px 5px 0 var(--color-shadow);
+    transition-duration: .5s;}
+
+.main-event-inner {
+    width: 99%;
+    font-family: var(--font-main);
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+}
+
+.main-event-window {
+    height: 600px;
+    width: 600px;
+    position: relative;
+    margin-top: 70px;
+    margin-left:;
+    border-radius: 10px;
+    display: inline-flex;
+    margin-right: 20px;
+}
+
+.main-event-info-container {
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 90%;
+    background-color: white;
+    border-radius: 10px;
+    display: block;
+}
+
+.main-event-img {
+    width: 100%;
+    flex-wrap: wrap;
+    object-fit: cover;
+    border-radius: 10px;
+    height: 40%;
+}
+
+.main-event-host-title {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main-event-host-avatar {
+    width: 150px;
+    height: 150px;
+    flex-wrap: wrap;
+    object-fit: cover;
+    border-radius: 100px;
+    margin: auto;
+    display: block;
+    position: relative;
+    margin-top: 5px;
+}
+
+.main-event-host-description {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.main-event-description {
+    width: 1200px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    height: 540px;
+    margin-top: 80px;
+    border-radius: 10px;
+    padding-right: 20px;
+}
+
+.promocode {
+    text-align: center;
+    margin: auto;
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 30px;
+    width: 70%;
+    font-size: 15px;
+    background-color: var(--color-surface-muted);
+    outline: none;
+    border: none;
+}
+
+.description-title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.description {
+    margin-left: 30px;
+    margin-right: 20px;
+    height: 220px;
+}
+
+.description-container {
+}
+
+.ticket-prices {
+    height: 150px;
+    width: 100%;
+    margin-left: 30px;
+}
+
+.event-info {
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.promocode:hover {
+    box-shadow: 0 2px 5px 0 var(--color-shadow);
+    transition-duration: .5s;
+}
+.promocode:focus {
+    box-shadow: 0 2px 5px 0 var(--color-shadow);
+    transition-duration: .5s;
+}
+
+.my-event-description {
+    width: 440px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    height: 600px;
+    margin-top: 80px;
+    border-radius: 10px;
+    padding-right: 20px;
+    padding-right: 5px;
+}
+
+.my-event-description-title {
+    margin-right: 100px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.my-event-window {
+    width: 500px;;
+    height: 600px;
+    width: 600px;
+    position: relative;
+    margin-top: 70px;
+    margin-left:;
+    border-radius: 10px;
+    display: inline-flex;
+    margin-right: 20px;
+}
+
+.my-event-img {
+    width: 100%;
+    flex-wrap: wrap;
+    object-fit: cover;
+    border-radius: 10px;
+    height: 50%;
+}
+
+.my-description {
+    margin-left: 30px;
+    margin-right: 20px;
+    height: 300px;
+    margin-top: 40px;
+}
+
+.my-event-info-container {
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    display: block;
+}
+
+.select-purchase {
+    width: 83%;
+    margin-left: 150px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 7px;
+    background-color: var(--color-surface-muted);
+    outline: none;
+    border: none;
+    padding-right: 45px;
+}
+
+.select-purchase:hover {
+    box-shadow: 0 2px 5px 0 var(--color-shadow);
+    transition-duration: .5s;
+}
+.input-settings:focus {
+    box-shadow: 0 2px 5px 0 var(--color-shadow);
+    transition-duration: .5s;
+}
+
+.pay-button {
+    text-align: center;
+    margin-top: 20px;
+    margin-right: -20px;
+}
+
+.select-purchase {
+    width: 83%;
+    margin-left: 150px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 7px;
+    background-color: var(--color-surface-muted);
+    outline: none;
+    border: none;
+    padding-right: 45px;
+}
+
+.select-purchase:hover {
+    box-shadow: 0 2px 5px 0 var(--color-shadow);
+    transition-duration: .5s;
+}
+.input-settings:focus {
+    box-shadow: 0 2px 5px 0 var(--color-shadow);
+    transition-duration: .5s;
+}
+
+.pay-button {
+    text-align: center;
+    margin-top: 20px;
+    margin-right: -20px;
+}
+
+.attachment {
+    background-color: white;
+    width: 350px;
+    border-radius: 10px;
+    height: 200px;
+    display: flex;
+    position: relative;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.attachment-image {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.back-button {
+    position: relative;
+    display: block;
+    margin-top: 80px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+color: black;
+    width: 30px;
+    height: 30px;
+}
+
+.back-button-link {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}

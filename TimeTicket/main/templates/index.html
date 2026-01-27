@@ -7,17 +7,10 @@
             </div>
             <div class="eventcontainer">
                 <div class="eventinner">
-                    {% for i in Eventlist %}
-                    <div class="event">
-                        <div class="event-window-container" id="{{ forloop.counter }}">
-                            <div class="event-window-inner">
-                                <img class="event-image" src="{{ i.eventpic.url }}">
-                                <h1 class="event-title">{{ i.eventtitle }}</h1>
-                                <div class="event-description">{{ i.eventdescriptionshort }}</div>
-                                <a class="event-more" href="{% url 'event_detail' i.pk %}">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% for event in events %}
+                        {% include "partials/event_card.html" with event=event counter=forloop.counter %}
+                    {% empty %}
+                    <div>Событий пока нет.</div>
                     {% endfor %}
                 </div>
         </div>
