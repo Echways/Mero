@@ -17,9 +17,7 @@ ignore = ["E501"]
 known-first-party = ["main", "TimeTicket"]
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "TimeTicket.settings"
-django_find_project = false
-python_files = ["test_*.py", "*_test.py"]
+python_files = ["test_*.py", "*_test.py", "tests.py"]
 pythonpath = ["TimeTicket"]
 
 [tool.mypy]

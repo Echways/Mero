@@ -52,18 +52,18 @@ class Event(models.Model):
         ordering = ["starts_at"]
         constraints = [
             models.CheckConstraint(
-                check=Q(min_age__gte=0),
+                condition=Q(min_age__gte=0),
                 name="event_min_age_non_negative",
             ),
             models.CheckConstraint(
-                check=Q(base_price__gte=0)
+                condition=Q(base_price__gte=0)
                 & Q(coffee_price__gte=0)
                 & Q(dinner_price__gte=0)
                 & Q(vip_price__gte=0),
                 name="event_prices_non_negative",
             ),
             models.CheckConstraint(
-                check=Q(ends_at__gte=F("starts_at")),
+                condition=Q(ends_at__gte=F("starts_at")),
                 name="event_ends_after_starts",
             ),
         ]
