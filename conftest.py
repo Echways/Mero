@@ -5,6 +5,9 @@ from pathlib import Path
 import django
 
 BASE_DIR = Path(__file__).resolve().parent
+PROJECT_DIR = BASE_DIR / "TimeTicket"
+if PROJECT_DIR.exists() and str(PROJECT_DIR) not in sys.path:
+    sys.path.insert(0, str(PROJECT_DIR))
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
