@@ -8,10 +8,10 @@ BASE_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = BASE_DIR / "TimeTicket"
 MANAGE_PATH = PROJECT_DIR / "manage.py"
 
-if MANAGE_PATH.exists() and str(PROJECT_DIR) not in sys.path:
-    sys.path.insert(0, str(PROJECT_DIR))
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
+if MANAGE_PATH.exists() and str(PROJECT_DIR) not in sys.path:
+    sys.path.insert(0, str(PROJECT_DIR))
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "TimeTicket.settings")
 os.environ.setdefault("SECRET_KEY", "test-secret")
