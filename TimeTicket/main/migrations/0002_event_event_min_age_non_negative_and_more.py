@@ -6,20 +6,33 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main', '0001_initial'),
+        ("main", "0001_initial"),
     ]
 
     operations = [
         migrations.AddConstraint(
-            model_name='event',
-            constraint=models.CheckConstraint(condition=models.Q(('min_age__gte', 0)), name='event_min_age_non_negative'),
+            model_name="event",
+            constraint=models.CheckConstraint(
+                condition=models.Q(("min_age__gte", 0)), name="event_min_age_non_negative"
+            ),
         ),
         migrations.AddConstraint(
-            model_name='event',
-            constraint=models.CheckConstraint(condition=models.Q(('base_price__gte', 0), ('coffee_price__gte', 0), ('dinner_price__gte', 0), ('vip_price__gte', 0)), name='event_prices_non_negative'),
+            model_name="event",
+            constraint=models.CheckConstraint(
+                condition=models.Q(
+                    ("base_price__gte", 0),
+                    ("coffee_price__gte", 0),
+                    ("dinner_price__gte", 0),
+                    ("vip_price__gte", 0),
+                ),
+                name="event_prices_non_negative",
+            ),
         ),
         migrations.AddConstraint(
-            model_name='event',
-            constraint=models.CheckConstraint(condition=models.Q(('ends_at__gte', models.F('starts_at'))), name='event_ends_after_starts'),
+            model_name="event",
+            constraint=models.CheckConstraint(
+                condition=models.Q(("ends_at__gte", models.F("starts_at"))),
+                name="event_ends_after_starts",
+            ),
         ),
     ]
