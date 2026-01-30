@@ -6,12 +6,10 @@ import django
 
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = BASE_DIR / "TimeTicket"
-SETTINGS_DIR = PROJECT_DIR / "TimeTicket"
+MANAGE_PATH = PROJECT_DIR / "manage.py"
 
-if PROJECT_DIR.exists() and str(PROJECT_DIR) not in sys.path:
+if MANAGE_PATH.exists() and str(PROJECT_DIR) not in sys.path:
     sys.path.insert(0, str(PROJECT_DIR))
-if SETTINGS_DIR.exists() and str(SETTINGS_DIR) not in sys.path:
-    sys.path.insert(0, str(SETTINGS_DIR))
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
