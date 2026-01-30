@@ -6,10 +6,19 @@ import django
 
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = BASE_DIR / "TimeTicket"
-if PROJECT_DIR.exists() and str(PROJECT_DIR) not in sys.path:
-    sys.path.insert(0, str(PROJECT_DIR))
-if str(BASE_DIR) not in sys.path:
-    sys.path.insert(0, str(BASE_DIR))
+MANAGE_PATH = PROJECT_DIR / "manage.py"
+
+project_path = str(PROJECT_DIR.resolve())
+base_path = str(BASE_DIR.resolve())
+
+if MANAGE_PATH.exists():
+    if project_path in sys.path:
+        sys.path.remove(project_path)
+    sys.path.insert(0, project_path)
+
+if base_path in sys.path:
+    sys.path.remove(base_path)
+sys.path.insert(1, base_path)
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "TimeTicket.settings")
 os.environ.setdefault("SECRET_KEY", "test-secret")

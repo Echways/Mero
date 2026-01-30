@@ -40,6 +40,7 @@ jobs:
 
       - name: Tests
         env:
+          PYTHONPATH: TimeTicket
           DJANGO_ENV: dev
           DATABASE_URL: postgres://mero:mero@localhost:5432/mero
           SECRET_KEY: ci-secret
